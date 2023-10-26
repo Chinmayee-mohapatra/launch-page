@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const timerSlice = createSlice({
   name: "timer",
   initialState: {
-    hours: 10,
+    hours: 0,
     minutes: 0, // Initial time for the event (10 minutes)
     seconds: 0,
     isTimerCompleted: false,
