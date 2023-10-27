@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 const LaunchContainer = () => {
   const navigate = useNavigate();
   const [confetti, setConfetti] = useState(false);
+  const [allowNavigation, setAllowNavigation] = useState(false);
+  const firstLoadDone = localStorage.getItem("firstLoadDone");
 
   const config = {
     angle: 360,
@@ -22,7 +24,51 @@ const LaunchContainer = () => {
 
   useEffect(() => {
     setConfetti(true);
-  }, [confetti]);
+
+    if (!firstLoadDone) {
+      localStorage.setItem("firstLoadDone", "true");
+      setAllowNavigation(true);
+    }
+  }, [firstLoadDone]);
+
+  useEffect(() => {
+    const handleBeforeUnload = (e) => {
+      if (!allowNavigation) {
+        e.preventDefault();
+        e.returnValue = "";
+      }
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, [allowNavigation]);
+
+  useEffect(() => {
+    if (allowNavigation) {
+      navigate("/liveEvent");
+    }
+  }, [allowNavigation, navigate]);
+
+  useEffect(() => {
+    // Add an event listener to detect the refresh keypress
+    const handleRefreshKeyPress = (e) => {
+      if (e.key === "F5" || (e.ctrlKey && e.key === "r")) {
+        e.preventDefault();
+        setTimeout(() => {
+          setAllowNavigation(true);
+        }, 2000);
+      }
+    };
+
+    window.addEventListener("keydown", handleRefreshKeyPress);
+
+    return () => {
+      window.removeEventListener("keydown", handleRefreshKeyPress);
+    };
+  }, []);
 
   return (
     <div className="relative ">
