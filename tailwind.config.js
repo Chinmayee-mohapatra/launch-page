@@ -1,12 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./index.html", "./src/**/*.js"],
   theme: {
     extend: {
       animation: {
         blob1: "blob1 20s infinite",
         blob2: "blob2 20s infinite",
         rocket: "rocket 5s infinite",
+        boxBounce: "boxBounce 1s linear",
+        loader: "loader 1s infinite linear",
       },
       keyframes: {
         blob1: {
@@ -53,6 +55,17 @@ module.exports = {
           "100%": {
             transform: "translate(0px, 0px) scale(1.1)",
           },
+        },
+        boxBounce: {
+          "0%": {
+            transform: "scale(0.25)",
+          },
+          "100% ": {
+            transform: "scale(1)",
+          },
+        },
+        loader: {
+          to: { transform: "rotate(1turn)" },
         },
       },
     },

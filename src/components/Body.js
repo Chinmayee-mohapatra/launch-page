@@ -13,6 +13,7 @@ const Body = () => {
   useEffect(() => {
     if (!isTimerCompleted) {
       const timer = setInterval(() => {
+        console.log("Timer decremented");
         dispatch(decrementTime());
       }, 1000);
 
@@ -23,16 +24,18 @@ const Body = () => {
   }, [dispatch, isTimerCompleted]);
 
   return (
-    <div className="w-[100vw] h-[calc(100vh-64px)] overflow-hidden -z-20 relative dark:bg-black">
-      <div className="absolute -z-10 w-[38rem] h-[38rem] bg-[#FF00B8] rounded-full mix-blend-normal filter blur-3xl bg-opacity-25 animate-blob1 "></div>
-      <div className="absolute -z-10 w-[38rem] h-[38rem] bg-[#772BF2] rounded-full  mix-blend-normal filter blur-3xl bg-opacity-25 animate-blob2"></div>
+    <div className="w-[100vw] h-[calc(100vh-64px)] overflow-x-hidden relative dark:bg-black">
+      <div className="absolute -z-10 w-[24rem] h-[24rem] md:w-[38rem] md:h-[38rem] bg-[#FF00B8] rounded-full mix-blend-normal filter blur-3xl bg-opacity-25 animate-blob1 "></div>
+      <div className="absolute -z-10 w-[24rem] h-[24rem] md:w-[38rem] md:h-[38rem] bg-[#772BF2] rounded-full  mix-blend-normal filter blur-3xl bg-opacity-25 animate-blob2"></div>
 
       {isTimerCompleted ? (
-        <div className="h-full flex justify-center items-center">
+        <div className="h-full flex justify-center items-center ">
           <LaunchContainer />
         </div>
       ) : (
-        <MainContent hours={hours} minutes={minutes} seconds={seconds} />
+        <div className="h-full">
+          <MainContent hours={hours} minutes={minutes} seconds={seconds} />
+        </div>
       )}
     </div>
   );

@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "./Header";
 
 const QuestionPage = () => {
   return (
-    <div>
-      <Header />
-      <div className="w-screen h-screen overflow-hidden dark:bg-black"></div>
+    <div className=" h-[80vh] md:h-[100vh] flex justify-center items-center text-black dark:text-white dark:bg-black">
+      <div className="text-2xl md:text-5xl font-bold ">
+        Event is live ... Enjoy!!!
+      </div>
     </div>
   );
 };
