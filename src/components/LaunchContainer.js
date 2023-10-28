@@ -75,11 +75,11 @@ const LaunchContainer = () => {
       <div className="absolute z-0 bottom-[30%] left-[50%]">
         <Confetti active={confetti} config={config} />
       </div>
-      <div className="flex flex-col items-center z-10 py-16 rounded-xl animate-boxBounce bg-gradient-to-br from-[#E5B8D9] to-[#C9B8E5] dark:bg-gradient-to-br dark:from-[#49163E] dark:to-[#2B174D]">
-        <h1 className="text-5xl font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#000000]  to-[#4D4D4D] dark:bg-gradient-to-r dark:from-[#ffffff] dark:to-[#CCCCCC]">
+      <div className="flex flex-col items-center z-10 m-4 md:m-2 py-10 md:py-16 rounded-xl animate-boxBounce bg-gradient-to-br from-[#E5B8D9] to-[#C9B8E5] dark:bg-gradient-to-br dark:from-[#49163E] dark:to-[#2B174D]">
+        <h1 className="text-3xl md:text-5xl font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#000000]  to-[#4D4D4D] dark:bg-gradient-to-r dark:from-[#ffffff] dark:to-[#CCCCCC]">
           We are Live Now!
         </h1>
-        <p className="text-[#333333] dark:text-[#CCCCCC] w-[56%] text-center text-xl my-6">
+        <p className="text-[#333333] dark:text-[#CCCCCC] w-[80%] md:w-[45%] text-center text-lg md:text-xl my-6">
           Our new feature is now{" "}
           <span className="text-[#0f0f0f] dark:text-[#ffffff] font-bold">
             Live and Ready
@@ -91,7 +91,7 @@ const LaunchContainer = () => {
           onClick={() => {
             navigate("/liveEvent");
           }}
-          className="hover:cursor-pointer mt-10 mb-4 px-6 py-2 text-2xl font-semibold rounded-md bg-[#0f0f0f] text-[#878787] hover:text-[#FFFFFF] duration-300 dark:text-[#0f0f0f] dark:bg-[#CCCCCC]"
+          className="hover:cursor-pointer mt-4 md:mt-8 mb-4 px-6 py-2 text-lg md:text-2xl font-semibold rounded-md bg-[#0f0f0f] text-[#878787] hover:text-[#FFFFFF] duration-300 dark:text-[#0f0f0f] dark:bg-[#CCCCCC]"
         >
           Get Started
         </button>

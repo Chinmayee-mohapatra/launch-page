@@ -1,12 +1,11 @@
-// timerSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
 const timerSlice = createSlice({
   name: "timer",
   initialState: {
-    hours: 1,
-    minutes: 0, // Initial time for the event (10 minutes)
-    seconds: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 10,
     isTimerCompleted: false,
   },
   reducers: {

@@ -7,11 +7,11 @@ const Header = () => {
   const isDarkTheme = useThemeDetector();
 
   return (
-    <div className="w-full p-2 hover:cursor-pointer bg-white dark:bg-gradient-to-r dark:from-[#330F29] dark:to-[#090909]">
+    <div className="w-full py-2 px-4 flex justify-between bg-white dark:bg-gradient-to-r dark:from-[#330F29] dark:to-[#090909]">
       {isDarkTheme ? (
-        <img src={logoDark} alt="logo-dark" />
+        <img src={logoDark} alt="logo-dark" className="w-3/4 md:w-fit" />
       ) : (
-        <img src={logo} alt="logo" />
+        <img src={logo} alt="logo" className="w-3/4 md:w-fit" />
       )}
     </div>
   );
