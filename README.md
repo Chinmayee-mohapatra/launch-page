@@ -6,7 +6,7 @@ With a clean and modern design, intuitive functionality, and seamless responsive
 
 Feel free to customize this introduction to fit your specific project and company details.
 
-- Set the initial timer for 2 minutes. You can try
+- Set the initial timer for 2 minutes. You can increase/decrease the timer in the timerSlice created in the Redux Store.
 
 ### Home page
 
