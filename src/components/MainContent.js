@@ -50,6 +50,9 @@ const MainContent = ({ hours, minutes, seconds }) => {
         setIsEmailValid(false);
       }
     }
+    if (!isEmailValid) {
+      alert("Invalid Email");
+    }
   };
 
   const handleCheckboxChange = (e) => {
@@ -132,7 +135,7 @@ const MainContent = ({ hours, minutes, seconds }) => {
             placeholder="Please enter your email id"
             value={inputEmail}
             onChange={handleEmailChange}
-            className="w-3/4 md:w-1/2 border-2 border-[#4d4d4d] px-2 py-3 rounded-md bg-transparent placeholder:text-[#878787] dark:placeholder:text-[#CCCCCC]"
+            className="w-3/4 md:w-1/2 border-2 dark:text-white border-[#4d4d4d] px-2 py-3 rounded-md bg-transparent placeholder:text-[#878787] dark:placeholder:text-[#CCCCCC]"
           />
           <button
             onClick={handleNotifyClick}
@@ -149,9 +152,16 @@ const MainContent = ({ hours, minutes, seconds }) => {
             ) : isEmailValid ? (
               <TiTick size={36} />
             ) : (
-              "Notify Me"
+              <div className="hover:cursor-wait bg-[#0f0f0f] dark:bg-[#CCCCCC] text-[#878787] dark:text-[#0f0f0f] text-xl md:text-2xl font-bold px-6 py-2 rounded-md">
+                Notify Me
+              </div>
             )}
           </button>
+        </div>
+        <div>
+          {!isEmailValid && inputEmail !== "" && (
+            <div className="text-red-600 font-bold">Invalid Email</div>
+          )}
         </div>
       </div>
     </div>

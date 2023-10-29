@@ -4,8 +4,8 @@ const timerSlice = createSlice({
   name: "timer",
   initialState: {
     hours: 0,
-    minutes: 0,
-    seconds: 10,
+    minutes: 2,
+    seconds: 0,
     isTimerCompleted: false,
   },
   reducers: {
